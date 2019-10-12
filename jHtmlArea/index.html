@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>jHtmlArea</title>
+  <link media="all" rel="stylesheet" type="text/css" href="./css/jHtmlArea.css" />
+  <style type="text/css">
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+  </style>
+  <script type="text/javascript" src="//simditor.tower.im/assets/scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/jHtmlArea-0.8.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <textarea id="details-editor" style="width:750px;height:500px;" placeholder="详情..." autofocus></textarea>
+    <div class="actions">
+      <button id="content-btn">获取编辑器内容</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#details-editor').htmlarea();
+    })
+    $('#content-btn').click(function(){
+      var value = $('#details-editor').htmlarea("toHtmlString");
+      alert(value);
+    })
+  </script>
+</body>
+
+</html>
